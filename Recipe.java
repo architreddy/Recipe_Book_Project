@@ -1,3 +1,5 @@
+package recipeBook;
+
 public class Recipe{
 	
 	// Name of recipe as a string
@@ -9,16 +11,9 @@ public class Recipe{
 	// store instructions as a long string separated by new line
 	private String instructionList;
 	
-	// constructor for recipe
-	public Recipe(String name, String[] ingredientsList, String instructionList) {
-		this.name = name;
-		this.ingredientsList = ingredientsList;
-		this.instructionList = instructionList;
-	}
-	
 	// getter for name 
 	public String getName() {
-		return Name;
+		return this.name;
 	}
 	
 	// setter for name
@@ -33,9 +28,7 @@ public class Recipe{
 	
 	// setter for ingredientsList
 	public void setIngredientsList(String[] ingredientsList) {
-		for (int i = 0; i < ingredientsList.length(), i++) {
-			this.ingredientsList[i] = ingredientsList[i];
-		}
+		this.ingredientsList = ingredientsList;
 	}
 	
 	// getter for instructionList
@@ -50,5 +43,4 @@ public class Recipe{
 	
 }
 
-// add getters and setters
 
