@@ -1,3 +1,6 @@
+// depecrated for now
+// the Recipe class is merged into Menu.Java
+
 public class Recipe{
 	
 	// Name of recipe as a string
@@ -18,7 +21,7 @@ public class Recipe{
 	
 	// getter for name 
 	public String getName() {
-		return Name;
+		return this.name;
 	}
 	
 	// setter for name
@@ -33,7 +36,7 @@ public class Recipe{
 	
 	// setter for ingredientsList
 	public void setIngredientsList(String[] ingredientsList) {
-		for (int i = 0; i < ingredientsList.length(), i++) {
+		for (int i = 0; i < ingredientsList.length; i++) {
 			this.ingredientsList[i] = ingredientsList[i];
 		}
 	}
