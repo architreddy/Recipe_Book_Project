@@ -1,5 +1,10 @@
 // depecrated for now
 // the Recipe class is merged into Menu.Java
+package recipebook;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Recipe{
 	
@@ -7,15 +12,22 @@ public class Recipe{
 	private String name; 
 	
 	// Ingredients stored in an arraylist of strings 
-	private String[] ingredientsList;
+	private List<String> ingredientsList;
 	
 	// store instructions as a long string separated by new line
 	private String instructionList;
+
+	// default constructor
+	public Recipe() {
+		this.name = "";
+		this.ingredientsList = new ArrayList<String>();
+		this.instructionList = "";
+	}
 	
 	// constructor for recipe
 	public Recipe(String name, String[] ingredientsList, String instructionList) {
 		this.name = name;
-		this.ingredientsList = ingredientsList;
+		this.ingredientsList = Arrays.asList(ingredientsList);
 		this.instructionList = instructionList;
 	}
 	
@@ -30,14 +42,23 @@ public class Recipe{
 	}
 	
 	// getter for ingredientsList
-	public String[] getIngredientsList() {
+	public List<String> getIngredientsList() {
 		return ingredientsList;
+	}
+
+	public String getIngredientsString() {
+		String result = "";
+		for (String ingredient : this.ingredientsList) {
+			result = result + ingredient + ", ";
+		}
+		return result;
 	}
 	
 	// setter for ingredientsList
 	public void setIngredientsList(String[] ingredientsList) {
+		this.ingredientsList.clear();
 		for (int i = 0; i < ingredientsList.length; i++) {
-			this.ingredientsList[i] = ingredientsList[i];
+			this.ingredientsList.add(ingredientsList[i]);
 		}
 	}
 	
@@ -50,8 +71,14 @@ public class Recipe{
 	public void setInstructionList(String instructionList) {
 		this.instructionList = instructionList;
 	}
+
+	public String toString() {
+		String result = "";
+		result = result + "NAME: " + this.getName() + "\n";
+		result = result + "INGREDIENTS: " + this.getIngredientsList() + "\n";
+		result = result + "INSTRUCTIONS:\n" + this.getInstructionList() + "\n";
+		return result;
+	}
 	
 }
-
-// add getters and setters
 
