@@ -1,4 +1,4 @@
-package recipebook;
+package recipeBook;
 
 import java.util.List;
 import java.util.ArrayList;

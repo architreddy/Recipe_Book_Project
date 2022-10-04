@@ -1,4 +1,4 @@
-package recipebook;
+package recipeBook;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import recipebook.Recipe;
+import recipeBook.Recipe;
 
 public class Menu{
 
