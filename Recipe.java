@@ -1,5 +1,3 @@
-// depecrated for now
-// the Recipe class is merged into Menu.Java
 package recipebook;
 
 import java.util.List;
