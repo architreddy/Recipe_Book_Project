@@ -117,7 +117,8 @@ public class Menu{
 
 	            // Option 2 -- view a singular recipe
 				else if (option == 2) {
-	                System.out.println("What would you like to search for?");
+	                System.out.println();
+					System.out.println("What would you like to search for?");
 					menu.nextLine();
 	                String recipeNameSearch = menu.nextLine(); // name
 					System.out.println();
@@ -127,6 +128,14 @@ public class Menu{
 	                    if (recipeNameSearch.toLowerCase().equals(recipe.getName().toLowerCase())){
 	                        System.out.println(recipe);
 	                    }
+
+						// cycle through all ingredients of each recipe
+						List<String> ingredients = recipe.getIngredientsList();
+						for(String ingredient : ingredients){
+							if (recipeNameSearch.toLowerCase().equals(ingredient.toLowerCase())){
+								System.out.println(recipe);
+							}
+						}
 	                }
 				}
 	            
@@ -153,7 +162,8 @@ public class Menu{
 
 		// display main options
 	    public static void menuScreen(){
-	        System.out.println("Welcome to your Recipe Book");
+	        System.out.println();
+			System.out.println("Welcome to your Recipe Book");
 		    System.out.println("To add a recipe, please press 1");
 		    System.out.println("To search a recipe, please press 2");
 		    System.out.println("To view all recipes, please press 3");
