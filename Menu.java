@@ -67,52 +67,48 @@ public class Menu{
 				
 	            // Option 1 -- add a recipe
 	            if (option == 1) {
-	                /*
+	                
 	                // construct recipe
+					System.out.println("What is the recipe's name?");
 	                Recipe a = new Recipe();
-
-
 	                // ask user for name of recipe
-	                System.out.println("What is the recipe's name?");
-	                String Name = (String) menu.next();
-	                a.setName(Name);
-
-
+	                String Name = (String) menu.nextLine();
+					a.setName(Name);
+	                
 	                // ask user for ingredients 
 	                System.out.println("What are ingredients required for this recipe? Please enter one by one. If done please type 'done'.");
 	                // user ingredient input 
-	                String ingredientBuild = (String) menu.next();
+	                String ingredientBuild = menu.nextLine();
 	                List<String> list = new ArrayList<String>();
 	                // build ingredient arraylist
-	                while (ingredientBuild.toLowerCase() != 'done'){
+	                while (!(ingredientBuild.toLowerCase().equals("done"))){
 	                    list.add(ingredientBuild);
-	                    ingredientBuild = (String) menu.next();
+	                    ingredientBuild = (String) menu.nextLine();
 	                }
-	                // convert to array
-	                String[] ingredientArray = list.toArray();
+
+					String[] ingredientsArray = list.toArray(new String[0]);
 	                // construct recipe ingredients
-	                a.setIngredientsList(ingredientArray);
+	                a.setIngredientsList(ingredientsArray);
 
 
 	                // ask user for instructions
 	                System.out.println("What are the recipe's instructions? Please enter one by one. If done please type 'done'");
-	                String recipeInstructions = null;
+	                String recipeInstructions = "";
 	                int count = 1;
-	                String instructionBuild = (String) menu.next();
+	                String instructionBuild = (String) menu.nextLine();
 	                // build instructions string
-	                while (instructionBuild.toLowerCase() != 'done'){
-	                    recipeInstructions += (String) count;
+	                while (!(instructionBuild.toLowerCase().equals("done"))){
+	                    recipeInstructions += Integer.toString(count) + ". ";
 	                    recipeInstructions += instructionBuild;
-	                    recipeInstructions += '\n';
+	                    recipeInstructions += "\r\n";
 
 	                    count++;
-	                    instructionBuild = (String) menu.next();
+	                    instructionBuild = (String) menu.nextLine();
 	                }
 	                a.setInstructionList(recipeInstructions);
 
-
-	                addARecipe(a);
-	                */
+					// add recipe 
+	                recipeList.add(a);
 				}
 
 	            // Option 2 -- view a singular recipe
