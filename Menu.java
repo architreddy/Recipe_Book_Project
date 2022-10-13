@@ -57,27 +57,28 @@ public class Menu{
 	        
 	        // continue prompting user 
 	        while(counter == true){
-	            
-	            // print user options
+	            // print main menu
 	            menuScreen();
 	            Scanner menu = new Scanner(System.in);
-
-	            // store user int input as option
 	            int option = menu.nextInt();
 				
 	            // Option 1 -- add a recipe
 	            if (option == 1) {
-	                
-	                // construct recipe
-					System.out.println("What is the recipe's name?");
+	                // Recipe Name
+					String prompt = "> What is the recipe's name?";
+					printHeader(prompt);
+					System.out.println(prompt);
+					printHeader(prompt);
 	                Recipe a = new Recipe();
-	                // ask user for name of recipe
 					menu.nextLine();
 	                String Name = (String) menu.nextLine();
 					a.setName(Name);
 	                
-	                // ask user for ingredients 
-	                System.out.println("What are ingredients required for this recipe? Please enter one by one. If done please type 'done'.");
+	                // Ingredients 
+					String prompt1 = "> What are ingredients required for this recipe? Please enter one by one. If done please type 'done'.";
+	                printHeader(prompt1);
+					System.out.println(prompt1);
+					printHeader(prompt1);
 	                // user ingredient input 
 	                String ingredientBuild = menu.nextLine();
 	                List<String> list = new ArrayList<String>();
@@ -86,14 +87,15 @@ public class Menu{
 	                    list.add(ingredientBuild);
 	                    ingredientBuild = (String) menu.nextLine();
 	                }
-
 					String[] ingredientsArray = list.toArray(new String[0]);
 	                // construct recipe ingredients
 	                a.setIngredientsList(ingredientsArray);
 
-
-	                // ask user for instructions
-	                System.out.println("What are the recipe's instructions? Please enter one by one. If done please type 'done'");
+	                // Instructions
+					String prompt2 = "> What are the recipe's instructions? Please enter one by one. If done please type 'done'";
+	                printHeader(prompt2);
+					System.out.println(prompt2);
+					printHeader(prompt2);
 	                String recipeInstructions = "";
 	                int count = 1;
 	                String instructionBuild = (String) menu.nextLine();
@@ -114,8 +116,10 @@ public class Menu{
 
 	            // Option 2 -- view a singular recipe
 				else if (option == 2) {
-	                System.out.println();
-					System.out.println("What would you like to search for?");
+	                String prompt = "> What would you like to search for?";
+					printHeader(prompt);
+					System.out.println(prompt);
+					printHeader(prompt);
 					menu.nextLine();
 	                String recipeNameSearch = menu.nextLine(); // name
 					System.out.println();
@@ -135,10 +139,11 @@ public class Menu{
 						}
 	                }
 				}
-		    else if (option == 3) {
-
-                    System.out.println();
-                    System.out.println("What recipe would you like to look at?");
+		    	else if (option == 3) {
+                    String promptt = "> What recipe would you like to look at?";
+                    printHeader(promptt);
+					System.out.println(promptt);
+					printHeader(promptt);
                     menu.nextLine();
                     String recipeNameSearch = menu.nextLine(); // name
                     System.out.println();
@@ -152,28 +157,34 @@ public class Menu{
 							String[] instructionSteps = instructionString.split("\n");
 							
                             for (String step : instructionSteps){ 
-
-                                System.out.println("Press enter to reveal next step. Enter any character to return to Menu.");
-
+								String promptt1 = "> Press enter to reveal next step. Enter any character to return to Menu.";
+								printHeader(promptt1);
+                                System.out.println(promptt1);
+								printHeader(promptt1);
                                 String prompt = menu.nextLine();
-
                                 if (prompt.equals("")){
-                                    System.out.println(step);
-									System.out.println();
+                                    printHeader(step);
+									System.out.println(step);
+									printHeader(step);
                                 }
 								else{
 									break;
 								}
                             }
                         }
-                }
-            }	            
+                	}
+            	}	            
 	            // Option 4 -- view all recipes 
 	            else if (option == 4) {
 
 					System.out.println();
 					for(Recipe recipe : recipeList) {
+						String namee = "NAME: " + recipe.getName();
+						String[] instructionListtt = recipe.getInstructionList().split("\n");
+						int lastInstructionIndex = instructionListtt.length - 1;
+						printHeader(namee);
 						System.out.println(recipe);
+						printHeader(instructionListtt[lastInstructionIndex]);
 	                    }
 	            }
 				     
@@ -189,15 +200,25 @@ public class Menu{
 
 	    }
 
+		public static void printHeader(String a){
+			String b = "-";
+			for (int i = 0; i < a.length(); i++){
+				b += "-";
+			}
+			
+			System.out.println(b);
+		}
 
 		// display main options
 	    public static void menuScreen(){
-			System.out.println();
-			System.out.println("Welcome to your Recipe Book");
-		    System.out.println("To add a recipe, please press 1");
-		    System.out.println("To search a recipe, please press 2");
-		    System.out.println("To view a recipe step-by-step, please press 3");
-		    System.out.println("To view all recipes, please press 4");
-		    System.out.println("To exit, press 0");
+			printHeader("> Welcome to your Recipe Book");
+			System.out.println("> Welcome to your Recipe Book");
+		    System.out.println("> To add a recipe, please press 1");
+		    System.out.println("> To search a recipe, please press 2");
+		    System.out.println("> To view a recipe step-by-step, please press 3");
+		    System.out.println("> To view all recipes, please press 4");
+		    System.out.println("> To exit, press 0");
+			printHeader("> To exit, press 0");
 	    }
 	}
+
