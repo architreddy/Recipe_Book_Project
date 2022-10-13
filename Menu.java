@@ -72,6 +72,7 @@ public class Menu{
 					System.out.println("What is the recipe's name?");
 	                Recipe a = new Recipe();
 	                // ask user for name of recipe
+					menu.nextLine();
 	                String Name = (String) menu.nextLine();
 					a.setName(Name);
 	                
