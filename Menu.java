@@ -135,9 +135,49 @@ public class Menu{
 						}
 	                }
 				}
-	            
-	            // Option 3 -- view all recipes 
-	            else if (option == 3) {
+		    else if (option == 3) {
+
+                    System.out.println();
+                    System.out.println("What recipe would you like to look at?");
+                    menu.nextLine();
+                    String recipeNameSearch = menu.nextLine(); // name
+                    System.out.println();
+
+
+                    for(Recipe recipe : recipeList) {
+                        if (recipeNameSearch.toLowerCase().equals(recipe.getName().toLowerCase())){
+                            
+
+                            List<String> instructions = recipe.getInstructionsList();
+
+                            count = 0;
+
+                            for (String step : instructions){
+
+                                System.out.println("Press 1 to reveal a step");
+
+                                String prompt = menu.nextLine();
+
+                                if (menu.nextLine == 1){
+                                    System.out.println();
+                                    System.out.println(step);
+                                }
+
+                                   
+
+                            }
+
+
+
+
+                        }
+
+
+
+                }
+            }	            
+	            // Option 4 -- view all recipes 
+	            else if (option == 4) {
 
 					System.out.println();
 					for(Recipe recipe : recipeList) {
@@ -163,7 +203,8 @@ public class Menu{
 			System.out.println("Welcome to your Recipe Book");
 		    System.out.println("To add a recipe, please press 1");
 		    System.out.println("To search a recipe, please press 2");
-		    System.out.println("To view all recipes, please press 3");
+		    System.out.println("To view a recipe step-by-step, please press 3");
+		    System.out.println("To view all recipes, please press 4");
 		    System.out.println("To exit, press 0");
 	    }
 	}
