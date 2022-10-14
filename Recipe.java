@@ -62,7 +62,7 @@ public class Recipe{
 	
 	// getter for instructionList
 	public String getInstructionList() {
-		return instructionList;
+		return instructionList.strip();
 	}
 	
 	// setter for instructionList
@@ -72,9 +72,9 @@ public class Recipe{
 
 	public String toString() {
 		String result = "";
-		result = result + "NAME: " + this.getName() + "\n";
-		result = result + "INGREDIENTS: " + this.getIngredientsList() + "\n";
-		result = result + "INSTRUCTIONS:\n" + this.getInstructionList() + "\n";
+		result += "NAME: " + this.getName() + "\n";
+		result += "INGREDIENTS: " + this.getIngredientsList() + "\n";
+		result += "INSTRUCTIONS:\n" + this.getInstructionList();
 		return result;
 	}
 	
