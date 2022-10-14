@@ -1,0 +1,37 @@
+----- Welcome to your Recipe Records! -----
+{
+NAME: Alfredo
+INGREDIENTS: Papardelle,Alfredo Sauce,Butter,Chicken
+INSTRUCTIONS:
+1. Boil Papardelle
+2. Melt butter
+3. Fry chicken in butter with alfredo sauce
+4. Mix in pan
+}
+{
+NAME: Rice
+INGREDIENTS: Rice,Beans,Carrots,Olive Oil,Egg
+INSTRUCTIONS:
+1. Wash and cook rice
+2. Heat Olive Oil in Wok
+3. Fry egg in olive oil
+4. Mix in carrots, beans, and rice to pan and stir
+}
+{
+NAME: Wagyu
+INGREDIENTS: Wagyu,Butter,Garlic,Thyme
+INSTRUCTIONS:
+1. Melt butter to pan
+2. Mix in garlic and thyme
+3. Drop Wagyu to pan for 3 minutes
+4. Flip for 2 more minutes
+}
+{
+NAME: Instant Ramen
+INGREDIENTS: Instant Ramen,Water
+INSTRUCTIONS:
+1. Boil water
+2. Pour boiling water into ramen cup
+3. Wait 5 minutes
+4. Enjoy
+}
