@@ -35,3 +35,11 @@ INSTRUCTIONS:
 3. Wait 5 minutes
 4. Enjoy
 }
+{
+NAME: Pesto
+INGREDIENTS: Pasta,Basil,Pecan,Olive Oil
+INSTRUCTIONS: 
+1. Blend basil pecan and olive oil
+2. boil and cook pasta
+3. mix together in pan
+}
